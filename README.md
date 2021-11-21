@@ -1,6 +1,6 @@
 # WebpageFetcher
 
-## How to run fetch command
+## How to run fetch command on Docker
 
 ```shell
 $ docker-compose up
