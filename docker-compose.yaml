@@ -2,6 +2,7 @@ version: '3'
 
 services:
   fetch:
+    container_name: webpage_fetcher
     build:
       context: .
       dockerfile: Dockerfile
