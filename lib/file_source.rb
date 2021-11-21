@@ -12,15 +12,14 @@ class FileSource
 
   def download_content(url)
     @page       = @agent.get(url.to_s)
-    @last_fetch = Time.now.utc
 
     while %w(301 302).include?(@page.code)
-      @page       = @agent.get(@page.header['location'])
-      @last_fetch = Time.now.utc
+      @page = @agent.get(@page.header['location'])
     end
 
-    @uri = @page.uri
-    @site = @uri.host
+    @uri        = @page.uri
+    @site       = @uri.host
+    @last_fetch = Time.now.utc
 
     @page.body
   end
