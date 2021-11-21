@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+require './lib/fetch.rb'
+require './lib/file_source.rb'
+
+ARGV.unshift(Fetch.default_task) unless Fetch.all_tasks.has_key?(ARGV[0])
+Fetch.start
