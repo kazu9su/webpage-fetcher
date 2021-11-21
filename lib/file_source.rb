@@ -11,7 +11,7 @@ class FileSource
   end
 
   def download_content(url)
-    @page       = @agent.get(url.to_s)
+    @page = @agent.get(url.to_s)
 
     while %w(301 302).include?(@page.code)
       @page = @agent.get(@page.header['location'])
