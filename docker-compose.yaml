@@ -8,4 +8,4 @@ services:
       dockerfile: Dockerfile
     volumes:
       - .:/app/
-    command: bash -c "bundle install & tail -F anything"
+    command: tail -F anything
