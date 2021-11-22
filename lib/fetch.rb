@@ -8,9 +8,9 @@ class Fetch < Thor
   def fetch(*urls)
     urls.each do |url|
       source  = FileSource.new
-      content = source.download_content(URI.parse(url))
 
       File.open(source.fname, 'w') do |f|
+        content = source.download_content(URI.parse(url))
         f.write(content)
       end
 
